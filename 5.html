@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h1>Fibonacci Series</h1>
+    <label for="num">Enter a number:</label>
+    <input type="number" id="num" />
+    <button onclick="printFibonacci()">Print Fibonacci Series</button>
+    <p id="result"></p>
+    <script>
+        function printFibonacci() {
+            var num = parseInt(document.getElementById("num").value);
+            var fibArray = [];
+            fibArray[0] = 0;
+            fibArray[1] = 1;
+            for (var i = 2; i < num; i++) {
+                fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+            }
+            var result = fibArray.join(", ");
+            document.getElementById("result").innerHTML = "Fibonacci Series: " + result;
+        }
+    </script>
+</body>
+</html>

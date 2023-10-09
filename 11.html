@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form id="myForm">
+        <label for="username">Username (at least 8 characters):</label>
+        <input type="text" id="username" name="username" required minlength="8"><br>
+
+        <label for="password">Password (at least 8 characters):</label>
+        <input type="password" id="password" name="password" required minlength="8"><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8"><br>
+
+        <label for="phoneNumber">Phone Number (up to 10 digits):</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10"><br>
+
+        <label for="pinCode">Pin Code (up to 6 digits):</label>
+        <input type="text" id="pinCode" name="pinCode" maxlength="6"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        var form = document.getElementById('myForm');
+        form.addEventListener('submit', function (event) {
+            var username = document.getElementById('username');
+            var password = document.getElementById('password');
+            var confirmPassword = document.getElementById('confirmPassword');
+            var phoneNumber = document.getElementById('phoneNumber');
+            var pinCode = document.getElementById('pinCode');
+
+            if (username.value.length < 8) {
+                alert('Username should be at least 8 characters.');
+                event.preventDefault();
+            }
+
+            if (password.value.length < 8) {
+                alert('Password should be at least 8 characters.');
+                event.preventDefault();
+            }
+
+            if (password.value !== confirmPassword.value) {
+                alert('Passwords do not match.');
+                event.preventDefault();
+            }
+
+            if (phoneNumber.value.length > 10) {
+                alert('Phone number should be at most 10 digits.');
+                event.preventDefault();
+            }
+
+            if (pinCode.value.length > 6) {
+                alert('Pin code should be at most 6 digits.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

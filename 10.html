@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Array Elements in Reverse</title>
+</head>
+<body>
+    <h1>Array Elements in Reverse</h1>
+    <ul id="reverse-array-list"></ul>
+
+    <script>
+        var myArray = [1, 2, 3, 4, 5];
+        var reverseArrayList = document.getElementById('reverse-array-list');
+        for (var i = myArray.length - 1; i >= 0; i--) {
+            var listItem = document.createElement('li');
+            listItem.textContent = myArray[i];
+            reverseArrayList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>

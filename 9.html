@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Array Elements</title>
+</head>
+<body>
+    <h1>Array Elements</h1>
+    <ul id="array-list"></ul>
+
+    <script>
+        var myArray = [1, 2, 3, 4, 5];
+        var arrayList = document.getElementById('array-list');
+        for (var i = 0; i < myArray.length; i++) {
+            var listItem = document.createElement('li');
+            listItem.textContent = myArray[i];
+            arrayList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>

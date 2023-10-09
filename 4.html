@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Calculator</title>
+    <script>
+        function calculateFactorial() {
+            var inputNumber = document.getElementById("number").value;
+            if (inputNumber === "" || isNaN(inputNumber) || inputNumber < 0 || !Number.isInteger(Number(inputNumber))) {
+                alert("Please enter a valid positive integer.");
+                return;
+            }
+            var factorial = 1;
+            for (var i = 2; i <= inputNumber; i++) {
+                factorial *= i;
+            }
+            document.getElementById("result").innerHTML = "Factorial of " + inputNumber + " is " + factorial;
+        }
+    </script>
+</head>
+<body>
+    <h1>Factorial Calculator</h1>
+    <p>Enter a positive integer to calculate its factorial:</p>
+    <input type="text" id="number">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <p id="result"></p>
+</body>
+</html>
